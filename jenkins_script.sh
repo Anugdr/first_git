@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "git hub witgh jenkins"
+echo "git hub witgh jenkins automated"
