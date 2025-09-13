@@ -77,5 +77,28 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
                 echo 'Deploying the application...'
             }
         }
+
+
+        stage('A') {
+            steps {
+                echo 'This is stage A'
+            }
+        }
+
+        stage('B') {
+            steps {
+                echo 'This is stage B'
+                catchError(stageResult: 'SUCCESS', buildResult: 'SUCCESS')
+                {
+                    sh 'exit 1'
+                }
+            }
+        }
+
+        stage('C') {
+            steps {
+                echo 'continue to next stage'
+            }
+        }
     }
 }
