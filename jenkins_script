@@ -5,9 +5,9 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-               git credentialsId: 'apps_github', url: 'https://github.com/Anugdr/jenkins_pipeline.git',branch: 'main'
+               git credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git',branch: 'main'
 
-checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
+
             }
         }
  stage('checkout2') {
