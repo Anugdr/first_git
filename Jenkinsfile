@@ -31,8 +31,8 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
 
             }
         }
-        }
-        }
+        
+        
         
         stage('build') {
             agent { label 'slave1' }
