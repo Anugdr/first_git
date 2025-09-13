@@ -2,9 +2,9 @@
 pipeline {
     agent any
     
-  enviornment{
+    enviornment {
       APP_NAME ='Frontend'
-      TARGET_ENV='Backend'
+      TARGET_ENV ='Backend'
       CHECKOUT_BRANCH='main'
   }
     
@@ -23,10 +23,7 @@ pipeline {
                
 
 checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
-                sh "echo  ${env.APP_NAME}"
-                 
-                sh '''
-                echo $APP_NAME
+                
                 echo TARGETMachine
                 '''
                 
@@ -45,6 +42,15 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
         }
         
         
+        stage('env') {
+        steps {
+          sh "echo  ${env.APP_NAME}"
+                 
+                sh '''
+                echo $APP_NAME
+                '''
+                }
+                }
         
         stage('build') {
             agent { label 'slave1' }
