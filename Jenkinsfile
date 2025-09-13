@@ -2,10 +2,10 @@
 pipeline {
     agent any
 
- options {
-    disableConcurrentBuilds()
-     timestamps()
-  } 
+ //options {
+ //   disableConcurrentBuilds()
+ //    timestamps()
+//} 
 
     parameters {
          choice choices: ['https://github.com/Anugdr/first_git.git', 'https://github.com/Anugdr/jenkins_pipeline.git'], description: 'choose URl to checkout', name: 'GIT_URL'
