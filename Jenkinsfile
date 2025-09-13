@@ -10,6 +10,7 @@ pipeline {
     parameters {
          choice choices: ['https://github.com/Anugdr/first_git.git', 'https://github.com/Anugdr/jenkins_pipeline.git'], description: 'choose URl to checkout', name: 'GIT_URL'
         choice(name:'SERVER',choices: ['test','staging','prod'])
+        string(name: 'CHECKOUT_BRANCH',defaultValue: 'main')
       }
 
     
