@@ -20,6 +20,7 @@ pipeline {
 checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
             }
         }
+            }
 
                  stage('prepare') {
             steps {
