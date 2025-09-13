@@ -1,7 +1,13 @@
 
 pipeline {
     agent any
-
+    
+  enviornment{
+      APP_NAME ='Frontend'
+      TARGET_ENV='Backend'
+      CHECKOUT_BRANCH='main'
+  }
+    
     stages {
         stage('parllel'){
             
@@ -9,6 +15,7 @@ pipeline {
                 stage('checkout') {
                     steps {
                    git credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git',branch: 'main'
+                        
             }
         }
  stage('checkout2') {
@@ -16,6 +23,13 @@ pipeline {
                
 
 checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
+                sh "echo  ${env.APP_NAME}"
+                 
+                sh '''
+                echo $APP_NAME
+                echo TARGETMachine
+                '''
+                
             }
         }
            
