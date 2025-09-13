@@ -4,6 +4,7 @@ pipeline {
 
     stages {
         stage("parllel"){
+            agent { label slave1}
             parallel {
         stage('checkout') {
             steps {
