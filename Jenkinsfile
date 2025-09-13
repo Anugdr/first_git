@@ -88,7 +88,7 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
         stage('B') {
             steps {
                 echo 'This is stage B'
-                catchError(stageResult: 'SUCCESS', buildResult: 'SUCCESS')
+                catchError(stageResult: 'FAILURE', buildResult: 'SUCCESS')
                 {
                     sh 'exit 1'
                 }
