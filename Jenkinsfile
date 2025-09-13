@@ -3,6 +3,8 @@ pipeline {
     agent any
 
     stages {
+        stage("parllel"){
+            parallel {
         stage('checkout') {
             steps {
                git credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git',branch: 'main'
@@ -17,6 +19,9 @@ pipeline {
 checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
             }
         }
+        }
+        }
+        
         stage('build') {
             steps {
                 sh '''
