@@ -24,8 +24,6 @@ pipeline {
 
 checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'apps_github', url: 'https://github.com/Anugdr/first_git.git']])
                 
-                echo TARGETMachine
-                '''
                 
             }
         }
@@ -34,7 +32,7 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
         }
 
                  stage('prepare') {
-            steps {
+              steps {
                cleanWs()//clean workspace
                 
 
