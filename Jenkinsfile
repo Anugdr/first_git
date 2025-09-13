@@ -2,6 +2,13 @@
 pipeline {
     agent any
 
+    triggers{
+        pollSCM('H/2 * * * *')
+        cron('H/15 * * * 1-15')
+        githubPush()
+    }
+    
+
  //options {
  //   disableConcurrentBuilds()
  //    timestamps()
