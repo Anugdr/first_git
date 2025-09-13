@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     triggers{
+        
         pollSCM('H/2 * * * *')
         cron('H/15 * * * 1-5')
         githubPush()
