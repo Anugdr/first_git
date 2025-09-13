@@ -100,5 +100,24 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
                 echo 'continue to next stage'
             }
         }
+
+         stage('exception-script') {
+            steps {
+                script{
+                    try{
+                        sh 'echo hi'
+                    }
+                    catch(e)
+                    {
+                        echo "caught an error :${e}"
+                    }
+                    finally
+                    {
+                        echo "Disconnect the connection from"
+                    }
+                }
+                
+            }
+        }
     }
 }
