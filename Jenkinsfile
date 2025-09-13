@@ -4,7 +4,7 @@ pipeline {
 
     triggers{
         pollSCM('H/2 * * * *')
-        cron('H/15 * * * 1-15')
+        cron('H/15 * * * 1-5')
         githubPush()
     }
     
