@@ -2,9 +2,10 @@
 pipeline {
     agent any
 
-options {
+ options {
     disableConcurrentBuilds()
-}
+     timestamps()
+  }
     
     environment {
       APP_NAME ='Frontend'
