@@ -105,7 +105,7 @@ checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId
             steps {
                 script{
                     try{
-                        sh 'echo hi'
+                        sh 'exit 1'
                     }
                     catch(e)
                     {
