@@ -2,7 +2,7 @@
 pipeline {
     agent any
     
-    enviornment {
+    environment {
       APP_NAME ='Frontend'
       TARGET_ENV ='Backend'
       CHECKOUT_BRANCH='main'
